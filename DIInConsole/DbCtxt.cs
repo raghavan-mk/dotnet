@@ -3,11 +3,14 @@ public class DbCtxt
 {
     private readonly IConfiguration _configuration;
     private readonly ILogger<DbCtxt> _logger;
+    // private readonly string _connectionString;
+
     public DbCtxt(IConfiguration configuration, ILogger<DbCtxt> logger)
     {
         _configuration = configuration;
         _logger = logger;
-        //read db config
+        //read db config e.g. read connection string
+        // _connectionString = _configuration.GetConnectionString("MyDb");
     }
     public void DoSomeDbStuff()
     {
