@@ -1,5 +1,4 @@
-﻿
-using var host = CreateHostBuilder(args).Build();
+﻿using var host = CreateHostBuilder(args).Build();
 await host.StartAsync();
 using var scope = host.Services.CreateScope();
 var worker = scope.ServiceProvider.GetService<Worker>();

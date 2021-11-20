@@ -1,5 +1,4 @@
 namespace DotNet.DIInConsole;
-
 public class Worker
 {
     private readonly IConfiguration _configuration;
@@ -12,7 +11,6 @@ public class Worker
         _logger = logger;
         _dbCtxt = dbCtxt;
     }
-
     public Task Run()
     {
         _dbCtxt.DoSomeDbStuff();
