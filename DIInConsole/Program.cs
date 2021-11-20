@@ -11,6 +11,8 @@ IHostBuilder CreateHostBuilder(string[] args) =>
 
 void ConfigureServices(IServiceCollection services)
 {
+    //main class which does the work
     services.AddScoped<Worker>();
+    //do some DB operations
     services.AddScoped<DbCtxt>();
 }
