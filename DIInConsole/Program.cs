@@ -19,6 +19,3 @@ void ConfigureServices(IServiceCollection services)
     services.AddScoped<Worker>();
     services.AddScoped<DbCtxt>();
 }
-
-
-
