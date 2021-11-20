@@ -1,7 +1,4 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-
-namespace DIInConsole
+namespace DotNet.DIInConsole
 {
     public class DbCtxt
     {

@@ -1,8 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using DIInConsole;
-
+﻿
 using var host = CreateHostBuilder(args).Build();
 await host.StartAsync();
 using var scope = host.Services.CreateScope();

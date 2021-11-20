@@ -1,26 +1,21 @@
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+namespace DotNet.DIInConsole;
 
-namespace DIInConsole
+public class Worker
 {
-    public class Worker
+    private readonly IConfiguration _configuration;
+    private readonly DbCtxt _dbCtxt;
+    private readonly ILogger<Worker> _logger;
+
+    public Worker(IConfiguration configuration, ILogger<Worker> logger, DbCtxt dbCtxt)
     {
-        private readonly IConfiguration _configuration;
-        private readonly ILogger<Worker> _logger;
-        private readonly DbCtxt _dbCtxt;
+        _configuration = configuration;
+        _logger = logger;
+        _dbCtxt = dbCtxt;
+    }
 
-        public Worker(IConfiguration configuration, ILogger<Worker> logger, DbCtxt dbCtxt)
-        {
-            _configuration = configuration;
-            _logger = logger;
-            _dbCtxt = dbCtxt;
-        }
-
-        public Task Run()
-        {
-            _dbCtxt.DoSomeDbStuff();
-            return Task.CompletedTask;
-        }
+    public Task Run()
+    {
+        _dbCtxt.DoSomeDbStuff();
+        return Task.CompletedTask;
     }
 }
