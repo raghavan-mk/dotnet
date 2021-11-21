@@ -1,5 +1,5 @@
-#Injecting DI in Console application
-
+Injecting DI in Console application
+-------------------------------
 There are times when we want to use Dependency Injection and other out of the box features available with host builder in console app as well. We do not have this auto generated when we create a new console app. But it is reasonbly simple to write a few lines of code to get this working.
 
 Steps
