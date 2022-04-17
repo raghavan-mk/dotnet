@@ -18,7 +18,7 @@ index = i + 1;
 var s5 = s2[index..];
 spans[2] = s5.ToArray();
 
-foreach (var x3 in 1..10)
+foreach (var x3 in (1..10).Iterate())
     WriteLine(x3);
 
 foreach (var x2 in str.Splice())
@@ -113,29 +113,14 @@ public ref struct IntEnumerator
 
 public ref struct RangeEnumerator
 {
-    private int _start;
     private readonly int _end;
 
     public RangeEnumerator(int start, int end)
     {
-        this._start = start;
+        this.Current = start - 1;
         this._end = end;
-        this.Current = start;
     }
-
     public RangeEnumerator GetEnumerator() => this;
-
-    public bool MoveNext()
-    {
-        if (_start < _end)
-        {
-            Current = _start;
-            _start += 1;
-            return true;
-        }
-
-        return false;
-    }
-
-    public int Current { get; set; }
+    public bool MoveNext() => ++Current < _end;
+    public int Current { get; private set; }
 }
