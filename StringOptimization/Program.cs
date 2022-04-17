@@ -18,10 +18,10 @@ index = i + 1;
 var s5 = s2[index..];
 spans[2] = s5.ToArray();
 
-foreach (var x3 in (1..10).Iterate())
+foreach (var x3 in 1..10)
     WriteLine(x3);
 
-foreach (var x2 in str.Splice())
+foreach (var x2 in str.Splice())    
     WriteLine(x2);
 
 foreach (var x in 10)
